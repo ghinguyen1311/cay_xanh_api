@@ -35,10 +35,9 @@ namespace CayXanhAPI
             //{
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CayXanhAPI", Version = "v1" });
             //});
-
             services.AddOpenApiDocument(config =>
             {
-                config.Title = "Cay Xanh app api";
+                config.Title = "Tree Management App API";
             });
         }
 

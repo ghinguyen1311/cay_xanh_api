@@ -1,3 +1,4 @@
+using CayXanhAPI.BAL;
 using CayXanhAPI.BAL.Interfaces;
 using CayXanhAPI.BAL.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -30,7 +31,8 @@ namespace CayXanhAPI
         {
 
             services.AddControllers();
-            services.AddTransient<INhomNhanVienRepository, NhomNhanVienRepository>();
+            services.AddInfrastructure();
+            // services.AddTransient<INhomNhanVienRepository, NhomNhanVienRepository>();
             //services.AddSwaggerGen(c =>
             //{
             //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CayXanhAPI", Version = "v1" });

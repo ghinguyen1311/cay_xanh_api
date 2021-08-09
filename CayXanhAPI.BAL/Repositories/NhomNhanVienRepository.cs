@@ -23,8 +23,9 @@ namespace CayXanhAPI.BAL.Repositories
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@TenNhom", nhom.TenNhom);
                 parameters.Add("@MoTa", nhom.MoTa);
+                QLCX_NhomNhanVien data = sqlConn.QueryFirstOrDefault<QLCX_NhomNhanVien>("sp_InsertNhomNhanVien", parameters, commandType: CommandType.StoredProcedure);
 
-                QLCX_NhomNhanVien data = SqlMapper.QueryFirstOrDefault<QLCX_NhomNhanVien>(sqlConn, "sp_InsertNhomNhanVien", parameters, commandType: CommandType.StoredProcedure);
+                //QLCX_NhomNhanVien data = SqlMapper.QueryFirstOrDefault<QLCX_NhomNhanVien>(sqlConn, "sp_InsertNhomNhanVien", parameters, commandType: CommandType.StoredProcedure);
                 return data;
             }
             catch (Exception ex)

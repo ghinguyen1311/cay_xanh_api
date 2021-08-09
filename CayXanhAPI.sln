@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CayXanhAPI", "CayXanhAPI\CayXanhAPI.csproj", "{5CFB0CA3-B1E3-41E3-B12B-B7FBC3D9164A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CayXanhAPI", "CayXanhAPI\CayXanhAPI.csproj", "{5CFB0CA3-B1E3-41E3-B12B-B7FBC3D9164A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CayXanhAPI.Domain", "CayXanhAPI.Domain\CayXanhAPI.Domain.csproj", "{42A657B8-BF7A-4B09-A3BF-1B9937D79F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CayXanhAPI.Domain", "CayXanhAPI.Domain\CayXanhAPI.Domain.csproj", "{42A657B8-BF7A-4B09-A3BF-1B9937D79F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CayXanhAPI.BAL", "CayXanhAPI.BAL\CayXanhAPI.BAL.csproj", "{3884B8CF-3EBD-48A5-8DA7-A73BA336E1BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CayXanhAPI.BAL", "CayXanhAPI.BAL\CayXanhAPI.BAL.csproj", "{3884B8CF-3EBD-48A5-8DA7-A73BA336E1BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

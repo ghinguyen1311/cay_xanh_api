@@ -31,9 +31,14 @@ namespace CayXanhAPI
 
             services.AddControllers();
             services.AddTransient<INhomNhanVienRepository, NhomNhanVienRepository>();
-            services.AddSwaggerGen(c =>
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CayXanhAPI", Version = "v1" });
+            //});
+
+            services.AddOpenApiDocument(config =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CayXanhAPI", Version = "v1" });
+                config.Title = "Cay Xanh app api";
             });
         }
 
@@ -43,9 +48,12 @@ namespace CayXanhAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CayXanhAPI v1"));
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CayXanhAPI v1"));
             }
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseHttpsRedirection();
 

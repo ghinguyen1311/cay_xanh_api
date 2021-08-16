@@ -13,7 +13,7 @@ namespace CayXanhAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NhomNhanVienController : ControllerBase
+    public class NhomNhanVienController : BaseServiceController
     {
         private INhomNhanVienRepository repository;
         public NhomNhanVienController()
@@ -84,6 +84,13 @@ namespace CayXanhAPI.Controllers
         [Route("getchovui")]
         public async Task<IActionResult> getget()
         {
+            string EmployeeID = "";
+            var emp = VerifyUserFromToken(Request);
+            if (emp != null)
+                EmployeeID = emp;
+            else
+                return Unauthorized();
+
             var lstResult = await repository.GetAllNhanVien();
             return Ok(new JsonResult(lstResult));
         }

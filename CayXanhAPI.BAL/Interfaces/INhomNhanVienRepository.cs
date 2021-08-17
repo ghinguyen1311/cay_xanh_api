@@ -14,5 +14,7 @@ namespace CayXanhAPI.BAL.Interfaces
         Task<QLCX_NhomNhanVien> Insert(QLCX_NhomNhanVien nhom);
         Task<QLCX_NhomNhanVien> Edit(QLCX_NhomNhanVien nhom);
         Task<IEnumerable<NhanVienBasic>> GetAllNhanVien();
+
+        Task<Result<IEnumerable<QLCX_NhomNhanVien>>> GetNhomNhanVien();
     }
 }

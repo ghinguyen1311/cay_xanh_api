@@ -156,5 +156,27 @@ namespace CayXanhAPI.BAL.Repositories
                     sqlConn.Close();
             }
         }
+
+        public async Task<Result<IEnumerable<QLCX_NhomNhanVien>>> GetNhomNhanVien()
+        {
+            SqlConnection sqlConn = null;
+            try
+            {
+                sqlConn = ConnectDataBase();
+                await sqlConn.OpenAsync();
+                IEnumerable<QLCX_NhomNhanVien> nhoms = await SqlMapper.QueryAsync<QLCX_NhomNhanVien>(sqlConn, "sp_GetAllNhomNhanVien", commandType: CommandType.StoredProcedure);
+                return Result<IEnumerable<QLCX_NhomNhanVien>>.Success(nhoms);
+                // return await SqlMapper.QueryAsync<QLCX_NhomNhanVien>("sp_RoomGet", commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                return Result<IEnumerable<QLCX_NhomNhanVien>>.Failure($"Process error: {ex.Message}");
+            }
+            finally
+            {
+                if (sqlConn != null)
+                    sqlConn.Close();
+            }
+        }
     }
 }

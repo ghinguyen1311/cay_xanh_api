@@ -11,14 +11,13 @@ using System.Threading.Tasks;
 
 namespace CayXanhAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class NhomNhanVienController : BaseServiceController
+    public class NhomNhanVienController : BaseApiController
     {
-        private INhomNhanVienRepository repository;
-        public NhomNhanVienController()
+        private readonly INhomNhanVienRepository repository;
+        public NhomNhanVienController(INhomNhanVienRepository _repository)
         {
-            repository = new NhomNhanVienRepository();
+            //repository = new NhomNhanVienRepository();
+            repository = _repository;
         }
     
         [HttpGet]
@@ -93,6 +92,13 @@ namespace CayXanhAPI.Controllers
 
             var lstResult = await repository.GetAllNhanVien();
             return Ok(new JsonResult(lstResult));
+        }
+
+        [HttpGet]
+        [Route("getchovuitiep")]
+        public async Task<IActionResult> getchovui()
+        {
+            return HandleResult(await repository.GetNhomNhanVien());
         }
     }
 }

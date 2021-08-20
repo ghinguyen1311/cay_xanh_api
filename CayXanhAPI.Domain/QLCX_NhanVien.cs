@@ -9,6 +9,7 @@ namespace CayXanhAPI.Domain
         public int ID { get; set; }
         public int MaNhom { get; set; }
         public string HoTen { get; set; }
+        public string DiaChi { get; set; }
         public string DienThoai { get; set; }
         public string HopThu { get; set; }
         public string TenDangNhap { get; set; }

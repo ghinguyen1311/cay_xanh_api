@@ -74,7 +74,7 @@ namespace CayXanhAPI.BAL.Repositories
                 parameters.Add("@TenNhom", nhom.TenNhom);
                 parameters.Add("@MoTa", nhom.MoTa);
 
-                QLCX_NhomNhanVien data = SqlMapper.QueryFirstOrDefault<QLCX_NhomNhanVien>(sqlConn, "sp_EditNhomNhanVien", parameters, commandType: CommandType.StoredProcedure);
+                QLCX_NhomNhanVien data = await SqlMapper.QueryFirstAsync<QLCX_NhomNhanVien>(sqlConn, "sp_EditNhomNhanVien", parameters, commandType: CommandType.StoredProcedure);
                 return data;
             }
             catch (Exception ex)

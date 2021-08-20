@@ -69,6 +69,10 @@ namespace CayXanhAPI.Controllers
                     expiration = token.ValidTo
                 });
             }
+            else
+            {
+
+            }
             return Unauthorized();
         }
 

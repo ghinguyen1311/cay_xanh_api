@@ -21,7 +21,7 @@ namespace CayXanhAPI.BAL.Interfaces
             {
                 var conn = new SqlConnection
                 {
-                    ConnectionString = @"Data Source=10.238.200.5\SQLV2016;Initial Catalog=CayXanhDoThi;Persist Security Info=True;User ID=cayxanhdothi;Password=B1nhB0t#"
+                    ConnectionString = @"Data Source=100.100.1.11;Initial Catalog=CayXanhDoThi;Persist Security Info=True;User ID=cayxanhdothi;Password=Abc@123"
                 };
 
                 return conn;

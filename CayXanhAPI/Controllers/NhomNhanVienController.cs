@@ -60,8 +60,8 @@ namespace CayXanhAPI.Controllers
         [HttpPut]
         public async Task<QLCX_NhomNhanVien> Edit([FromBody] QLCX_NhomNhanVien nhom)
         {
-            await repository.Edit(nhom);
-            return await repository.Get(nhom.ID);
+            return await repository.Edit(nhom);
+            //return await repository.Get(nhom.ID);
         }
         // DELETE api/<NhomNhanVienController>/5
         [HttpDelete("{id}")]

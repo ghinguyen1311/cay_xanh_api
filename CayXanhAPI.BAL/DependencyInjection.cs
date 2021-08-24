@@ -26,6 +26,7 @@ namespace CayXanhAPI.BAL
             services.AddTransient<INhomNhanVienRepository, NhomNhanVienRepository>();
             services.AddTransient<INhanVienRepository, NhanVienRepository>();
             services.AddTransient<INhomVanBanRepository, NhomVanBanRepository>();
+            services.AddTransient<IVanBanRepository, VanBanRepository>();
             return services;
         }
     }

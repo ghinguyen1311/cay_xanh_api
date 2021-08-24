@@ -31,6 +31,13 @@ namespace CayXanhAPI.Controllers
             return HandleResult(await _repository.GetDanhSachNhanVienTheoNhom(nhomId));
         }
 
+        [HttpGet]
+        [Route("getdsnhanvienkhongthuocnhom/{nhomId}")]
+        public async Task<IActionResult> getdanhsachkhongthuocnhomnhom(int nhomId)
+        {
+            return HandleResult(await _repository.DanhSachNhanVienKhongThuocNhom(nhomId));
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetThongTinNhanVien(int id)
         {

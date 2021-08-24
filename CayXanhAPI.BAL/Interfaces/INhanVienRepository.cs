@@ -16,5 +16,7 @@ namespace CayXanhAPI.BAL.Interfaces
 
         Task<Result<int>> ThemNhanVienVaoNhom(int ID, string listNv);
         Task<Result<int>> UpdateNhom(int nvId, int nhomId = 0);
+
+        Task<Result<IEnumerable<QLCX_NhanVien>>> DanhSachNhanVienKhongThuocNhom(int nhomId);
     }
 }

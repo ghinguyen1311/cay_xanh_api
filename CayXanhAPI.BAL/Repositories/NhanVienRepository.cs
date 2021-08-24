@@ -12,6 +12,30 @@ namespace CayXanhAPI.BAL.Repositories
 {
     public class NhanVienRepository : ConnectDatabase, INhanVienRepository
     {
+        public async Task<Result<IEnumerable<QLCX_NhanVien>>> DanhSachNhanVienKhongThuocNhom(int nhomId)
+        {
+            SqlConnection sqlConn = null;
+            try
+            {
+                sqlConn = ConnectDataBase();
+                await sqlConn.OpenAsync();
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@PNHOMID", nhomId);
+                IEnumerable<QLCX_NhanVien> nhoms = await SqlMapper.QueryAsync<QLCX_NhanVien>(sqlConn, "SP_GETNHANVIEN_KHONGTHUOCNHOM", parameters, commandType: CommandType.StoredProcedure);
+                return Result<IEnumerable<QLCX_NhanVien>>.Success(nhoms);
+                // return await SqlMapper.QueryAsync<QLCX_NhomNhanVien>("sp_RoomGet", commandType: CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                return Result<IEnumerable<QLCX_NhanVien>>.Failure($"Process error: {ex.Message}");
+            }
+            finally
+            {
+                if (sqlConn != null)
+                    sqlConn.Close();
+            }
+        }
+
         public async Task<Result<IEnumerable<QLCX_NhanVien>>> GetDanhSachNhanVien()
         {
             SqlConnection sqlConn = null;
